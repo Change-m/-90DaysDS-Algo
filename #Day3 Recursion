@@ -1,0 +1,11 @@
+Recursion:
+When a function call itself in the program again and again.
+
+# Steps in Recurion (Example- Calculate a^b using Recursion)
+1. Find the base case. (a^0 = 1 (base case were input does not enter in the recursion call))
+2. Find the relation between the problem and subproblems. (a^b = a^b-1 x a (Recursion Leap of Faith))
+3. Generalise the relation.
+
+
+Recursion Leap of Faith: 
+Don't enter in the Subproblems
