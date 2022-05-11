@@ -1,0 +1,69 @@
+Time Complexity:
+It is the amount of time taken by an algorithm to run.
+As a function of length of the input.
+
+Big O notation                 -->              Theta                            -->        Omega
+Upper Bound (worst case)                for Avg. Case complexity                         Lower Bound(Best case)
+
+Stuck in TLE:
+10^8 Operation Rule -->  Most of the modern machine can perform 10^8 Operation/sec.
+
+
+
+Input Length	                       Worst Accepted Time Complexity	           Usually type of solutions
+
+
+10 -12                                O(N!)                                      Recursion and backtracking
+
+15-18                                 O(2N * N)                                  Recursion, backtracking, and bit manipulation
+
+18-22                                 O(2N * N)                                  Recursion, backtracking, and bit manipulation
+
+30-40                                 O(2N/2 * N)                                Meet in the middle, Divide and Conquer
+
+100                                   O(N4)                                      Dynamic programming, Constructive
+
+400                                   O(N3)                                      Dynamic programming, Constructive
+
+2K                                    O(N2* log N)                               Dynamic programming, Binary Search, Sorting, 
+                                                                                 Divide and Conquer
+
+10K                                   O(N2)                                      Dynamic programming, Graph, Trees, Constructive
+
+1M                                    O(N* log N)                                Sorting, Binary Search, Divide and Conquer
+
+100M                                  O(N), O(log N), O(1)                       Constructive, Mathematical, Greedy Algorithms
+
+                       	
+Comparison of Various Time Complexity:
+
+O(c) < O(loglogn) < O(logn) < O(n^1/2) < O(n) < O(nlogn) < O(n^2) < O(n^3) < O(n^k) < O(2^n) > O(n^n) < O(2^2^n)
+
+
+Time Complexity of all Searching and Sorting Algorithum:
+
+Quick Sort  O(nlogn)                                           Binary Search  O(logn)
+Merge Sort  O(nlogn)                                           Sequential Search  O(n)
+Insertion Sort  O(n^2)                                         DFS, BFS O(V+E)
+Bubble Sort  O(n^2)
+Heap Sort  O(nlogn)
+Selection Sort  O(n^2)
+Height of CBT  O(logn)
+Insertion in Heap  O(logn)
+Construct Heap  O(nlogn)
+Delete from Heap  O(logn)
+Huffman O(nlogn)
+Prims Matrix  O(n^2), O[(V+E)logV]
+Kruskal  O(ElogE)
+All pair Shortest  O(n^3)
+Dijkstra  O(V^2)
+
+
+
+
+
+
+
+
+
+
