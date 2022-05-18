@@ -1,0 +1,48 @@
+Backtracking:
+             Backtracking will optimise the code. it will check is it worth it to enter in a recursion or not
+             if it find the not worth then it will move back to the previous step.
+             
+             
+N-Queen Problem:
+                Queen can move diagonally any where and up, down, left, and right.
+                we need to takecare that the queen should not cross eachother.
+                
+                def nQueen (board [] [], row):
+                    if (row == N):
+                       return true
+                    for i in range (N):
+                        if (isSafe(board, row, col)):
+                           board [row][col] = 1
+                           if (nQueen (board, row + 1))
+                              return true
+                           board [row] [col] = 0
+                    return false
+                           
+                           
+Sudoku Problem:
+               def find_empty_location(arr, l):
+                   for row in range(9):
+                       for col in rnage(9):
+                           if(arr[row][col] == 0):
+                               l[0] = row
+                               l[1] = col
+                               return True
+                    return False
+                    
+                    
+               def used_in_row(arr, row, num):
+                   for i in range(9):
+                       if (arr[row][i] == num):
+                          return True
+                   return False       
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
