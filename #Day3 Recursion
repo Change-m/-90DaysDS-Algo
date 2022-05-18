@@ -53,8 +53,25 @@ Problems:
                              
                                    
 2.  Print the Powerset of a given string:
+                                         def Powerset (str, i, cur):
+                                         if ( i == len(str):
+                                             print( cur )
+                                         Powerset(str, i + 1, cur + str[i]
+                                         Powerset (s, i + 1, cur)
                                          
-                                   
+                                         
+3.  Print all Permutations of a given string:
+                                             Time complexity:  O(n * n!)
+                                             abc -->  (abc, acb, bac, bca, cab, cba)
+                                             
+                                             def Permute ( str, l, r):
+                                                 if (l == r):
+                                                    print (str):
+                                                    return
+                                                 for i in range (r):
+                                                     str = swap(str, l + 1, i)
+                                                     permute(str, l + 1, r)
+                                                     str = swap(str, l, i)
                                    
                                    
                                    
