@@ -23,3 +23,13 @@ class Solution:
             n = n//10
         return p - q  # 243 -->  a = 2 * 4 * 3, b = 2 + 4 + 3, a-b   
       
+
+    def largestPerimeter(self, nums: List[int]) -> int:
+        nums.sort()
+        nums.reverse()
+        for i in range (len(nums)-2):
+            if nums[i] < nums[i+1] + nums[i+2]:
+                return nums[i] + nums[i+1] + nums[i+2]
+        return 0 # triangle largest perameter in nums array if impossible return 0  
+        
+        
