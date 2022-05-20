@@ -32,4 +32,8 @@ class Solution:
                 return nums[i] + nums[i+1] + nums[i+2]
         return 0 # triangle largest perameter in nums array if impossible return 0  
         
-        
+    
+    def nearestValidPoint(self, x: int, y: int, points: List[List[int]]) -> int:
+        valid = [[a, b] for a, b in points if a == x or b == y]
+        ans = min(valid, key=lambda t: abs(t[0] - x) + abs(t[1] - y), default=None)
+        return points.index(ans) if ans else -1    # finding the shortest distance of the coordinates
