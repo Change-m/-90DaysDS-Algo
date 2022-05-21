@@ -37,3 +37,25 @@ class Solution:
         valid = [[a, b] for a, b in points if a == x or b == y]
         ans = min(valid, key=lambda t: abs(t[0] - x) + abs(t[1] - y), default=None)
         return points.index(ans) if ans else -1    # finding the shortest distance of the coordinates
+    
+    
+    
+    def isHappy(self, n: int) -> bool:
+        '''while n!=1 and n != 4:
+            t = 0
+            for i in str(n):
+                t += int(i)**2
+            n = t
+        return '''
+        record = set()
+        while not n ==1:
+            n = sum([int(i)**2 for i in str(n)])
+            if n in record:
+                return False
+            else:
+                record.add(n)
+        return True # 19 = 1^2 + 9^2 = 82 = 8^2 + 2^2 = ....
+    
+    
+    
+    
