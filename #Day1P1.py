@@ -57,5 +57,21 @@ class Solution:
         return True # 19 = 1^2 + 9^2 = 82 = 8^2 + 2^2 = ....
     
     
+    def areAlmostEqual(self, s1: str, s2: str) -> bool:
+        '''i=0
+        while True:
+            if s1 == s2:
+                return True
+            if s1[i]!=s2[i]:
+                s1(i), s2(i) = s2(i), s1(i)
+                return True
+        return False'''
+        c=0
+        for i,j in zip(s1,s2):
+            if i!=j:
+                c+=1
+        return s1==s2 or sorted(s1)==sorted(s2) and c==2 # swap the not equal alphabet 
+    
+    
     
     
