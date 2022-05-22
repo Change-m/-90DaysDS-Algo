@@ -74,12 +74,13 @@ class Solution:
     
     
     def preorder(self, root: 'Node') -> List[int]:
+        
         traversal = list()
     
         if root:
             traversal.append(root.val)
-        for child in root.children:
-            traversal += self.preorder(child)
+            for child in root.children:
+                traversal += self.preorder(child)
     
-        return traversal # N-arr Traversal Pre order Tree
+            return traversal # N-arr Traversal Pre order Tree
     
