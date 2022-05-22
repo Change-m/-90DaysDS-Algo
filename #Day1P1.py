@@ -31,6 +31,19 @@ class Solution:
             if nums[i] < nums[i+1] + nums[i+2]:
                 return nums[i] + nums[i+1] + nums[i+2]
         return 0 # triangle largest perameter in nums array if impossible return 0  
+    
+    
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        n = []
+        for num in nums1:
+            if num >= max(nums2[nums2.index(num):]):
+                n += [-1]
+            else:
+                for num2 in nums2[nums2.index(num):]:
+                    if num2 > num:
+                        n += [num2]
+                        break
+        return n # Next Greater Element
         
     
     def nearestValidPoint(self, x: int, y: int, points: List[List[int]]) -> int:
