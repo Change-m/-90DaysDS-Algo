@@ -73,5 +73,13 @@ class Solution:
         return s1==s2 or sorted(s1)==sorted(s2) and c==2 # swap the not equal alphabet 
     
     
+    def preorder(self, root: 'Node') -> List[int]:
+        traversal = list()
     
+        if root:
+            traversal.append(root.val)
+        for child in root.children:
+            traversal += self.preorder(child)
+    
+        return traversal # N-arr Traversal Pre order Tree
     
