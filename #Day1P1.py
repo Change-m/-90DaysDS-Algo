@@ -130,7 +130,24 @@ class Solution:
     
     
     
-    
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        c=0
+        m=0
+        for i in range(len(nums)):
+            if nums[i] == 0:
+                c=c+1
+                m=m+1
+                
+        while c!=0:
+            nums.remove(0)
+            c=c-1
+            
+        while m!=0:
+            nums.append('0')
+            m=m-1#
     
     
     
