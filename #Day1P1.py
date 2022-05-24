@@ -111,3 +111,14 @@ class Solution:
     
             return traversal # N-arr Traversal Pre order Tree
     
+    
+    def sumOddLengthSubarrays(self, arr: List[int]) -> int:
+        length = len(arr)
+        ans = 0
+        for i in range(length):
+            ans += ((i+1)*(length-i)+1)//2 * arr[i]
+        return ans #take odd subarray of the list and add all the numbers
+    
+    
+    
+    
