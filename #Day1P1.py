@@ -185,7 +185,28 @@ class Solution:
     
     
     
-    
+    def isAlienSorted(self, words: List[str], order: str) -> bool:
+        if len(words) == 1:
+            return True
+        alien_dict = {}
+        for i in range(len(order)):
+            alien_dict[order[i]] = i
+            
+        for i in range(len(words)-1):
+            for j in range(i , len(words)-1):
+                if words[j] == words[j+1]:
+                    continue
+                l1 = len(words[j])
+                l2 = len(words[j+1])
+                index = min(l1 , l2)
+                for k in range(index):
+                    if alien_dict[words[j][k]] > alien_dict[words[j+1][k]]:
+                        return False
+                    elif alien_dict[words[j][k]] < alien_dict[words[j+1][k]]:
+                        break
+                    elif k >= (index-1) and l2 < l1:
+                        return False                 
+        return True
     
     
     
