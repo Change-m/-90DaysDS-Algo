@@ -209,6 +209,43 @@ class Solution:
         return True
     
     
-    
-    
-    
+    def getDecimalValue(self, head: ListNode) -> int:
+        '''temp = 0
+        F = head.val
+        if F[0] == 1:
+                temp += 1
+        for i in range(1, len(F)):
+            if F[i] == 1:
+                temp += ((i-1)*2)
+        return temp'''
+        if head.val == 1 and head.next == None:
+            return int(1)
+        else:
+            s = ''
+            pt = head
+            while pt:
+                s += str(pt.val)
+                pt = pt.next
+            b = s[::-1]
+            b = b[1:]
+            add = 0
+            count = 1
+            for i in b:
+                m = (2**count) * int(i)
+                add += m
+                count += 1
+
+            last = int(s[len(s)-1])
+            add += last
+            return add
+     
+     
+     
+     
+        
+        
+        
+        
+        
+        
+        
