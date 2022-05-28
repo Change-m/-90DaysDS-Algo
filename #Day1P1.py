@@ -167,3 +167,27 @@ class Solution:
     
     def findTheDifference(self, s: str, t: str) -> str:
         return list((Counter(t) - Counter(s)).keys())[0]
+    
+    
+    
+    def freqAlphabets(self, s: str) -> str:
+        letters = ' abcdefghijklmnopqrstuvwxyz'        
+        res = ''
+        
+        for i in range(len(s)):
+            if s[i] == '#':
+                res = res[:-2]
+                res += letters[int(s[i - 2:i])]
+            else:
+                res += letters[int(s[i])]
+        
+        return res# convert 1-9 to a-i, 10#-26# to j-z
+    
+    
+    
+    
+    
+    
+    
+    
+    
