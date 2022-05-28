@@ -241,7 +241,13 @@ class Solution:
      
      
      
-     
+     def getDecimalValue(self, head: ListNode) -> int:
+        a = ''
+        while head is not None:
+            a += str(head.val)
+            head = head.next
+        
+        return int(a, 2)
         
         
         
