@@ -163,3 +163,7 @@ class Solution:
         command=command.replace("()","o")
         command=command.replace("(al)","al")
         return command# replace the string from the another string
+    
+    
+    def findTheDifference(self, s: str, t: str) -> str:
+        return list((Counter(t) - Counter(s)).keys())[0]
