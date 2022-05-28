@@ -251,7 +251,21 @@ class Solution:
         
         
         
-        
+     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        '''a = ''
+        while head is not None:
+            a += str(head.val)
+            head = head.next
+        b = ceil(len(a)//2)
+        d = a[b:len(a)].split()
+        return d'''
+        f = s = head
+        #When the fast reaches the end, the position of the slow is the middle of the linkedlist
+        #because the fast move by two and the slow move by one
+        while f and f.next is not None :
+            f = f.next.next
+            s = s.next
+        return s   
         
         
         
