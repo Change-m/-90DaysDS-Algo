@@ -159,3 +159,7 @@ class Solution:
         return Sum
     
     
+    def interpret(self, command: str) -> str:
+        command=command.replace("()","o")
+        command=command.replace("(al)","al")
+        return command# replace the string from the another string
