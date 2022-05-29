@@ -333,3 +333,8 @@ class Solution:
 
     def empty(self) -> bool:
         return self.queue == []
+    
+    
+    def isAnagram(self, s: str, t: str) -> bool:
+        return ''.join(sorted(s))==''.join(sorted(t))#An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+    
