@@ -293,5 +293,23 @@ class Solution:
         return res
      
     
-    
+     def sortByBits(self, arr: List[int]) -> List[int]:
+        '''s1 = []
+        s2 = []
+        c = 2
+        d = []
+        arr.sort()
+        if 0 in arr:
+            s1.append(0)
+        if 1 in arr:
+            s1.append(1)
+        for i in arr[:len(arr)]:
+            if i == c:
+                s1.append(i)
+                c = c+c
+            else:
+                s2.append(i)
+        d = s1 + s2
+        return d'''
+        return sorted(arr,key=lambda x: (bin(x).count("1"),x))
     
