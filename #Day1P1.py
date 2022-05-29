@@ -398,7 +398,14 @@ numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3'''
     
     
     
-    
+    def maxProduct(self, words: List[str]) -> int:
+        maxx=0
+        for i in range(len(words)-1):
+            for j in range(i+1,len(words)):
+                if len(set(words[i]).intersection(words[j]))==0:
+                    maxx=max(maxx,len(words[i]*len(words[j])))
+        return maxx
+    '''Given a string array words, return the maximum value of length(word[i]) * length(word[j]) where the two words do not share common letters. If no such two words exist, return 0.'''
     
     
     
