@@ -344,3 +344,50 @@ class Solution:
             if nums[i] == nums[i+1]:
                 return True
         return False#Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+    
+    
+    
+    class ParkingSystem:
+
+    def __init__(self, big: int, medium: int, small: int):
+        self.big = big
+        self.medium = medium
+        self.small = small
+
+    def addCar(self, carType: int) -> bool:
+        if carType ==1 and self.big >=1:
+            self.big -=1
+            return True
+        if carType ==2 and self.medium>=1:
+            self.medium -=1
+            return True
+        if carType ==3 and self.small >=1:
+            self.small-=1
+            return True
+        return False
+
+'''Explanation
+ParkingSystem parkingSystem = new ParkingSystem(1, 1, 0);
+parkingSystem.addCar(1); // return true because there is 1 available slot for a big car
+parkingSystem.addCar(2); // return true because there is 1 available slot for a medium car
+parkingSystem.addCar(3); // return false because there is no available slot for a small car
+parkingSystem.addCar(1); // return false because there is no available slot for a big car. It is already occupied.''' 
+
+# Your ParkingSystem object will be instantiated and called as such:
+# obj = ParkingSystem(big, medium, small)
+# param_1 = obj.addCar(carType)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
