@@ -312,4 +312,24 @@ class Solution:
         d = s1 + s2
         return d'''
         return sorted(arr,key=lambda x: (bin(x).count("1"),x))
-    
+      
+        
+        
+        
+    class MyQueue:
+    def __init__(self):
+        self.queue = []        
+
+    def push(self, x: int) -> None:
+        self.queue.insert(0, x)
+
+    def pop(self) -> int:
+        if self.queue:
+            return self.queue.pop()
+
+    def peek(self) -> int:
+        if self.queue:
+            return self.queue[-1]
+
+    def empty(self) -> bool:
+        return self.queue == []
