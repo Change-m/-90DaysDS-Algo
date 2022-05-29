@@ -338,3 +338,9 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         return ''.join(sorted(s))==''.join(sorted(t))#An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
     
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        nums.sort()
+        for i in range(len(nums)-1):
+            if nums[i] == nums[i+1]:
+                return True
+        return False#Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
