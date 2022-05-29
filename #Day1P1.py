@@ -379,7 +379,22 @@ parkingSystem.addCar(1); // return false because there is no available slot for 
     
     
     
-    
+    class NumArray:
+
+    def __init__(self, nums: List[int]):
+        self.arr = nums[::]
+
+    def sumRange(self, left: int, right: int) -> int:
+        return sum(i for i in self.arr[left:right+1])
+'''Explanation
+NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
+numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1
+numArray.sumRange(2, 5); // return 3 + (-5) + 2 + (-1) = -1
+numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3'''
+
+# Your NumArray object will be instantiated and called as such:
+# obj = NumArray(nums)
+# param_1 = obj.sumRange(left,right)
     
     
     
