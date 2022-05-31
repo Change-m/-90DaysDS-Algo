@@ -42,3 +42,45 @@ def searchInsert(self, nums: List[int], target: int) -> int:
                 else:
                     l = mid+1
             return l
+
+        
+def sortedSquares(self, nums: List[int]) -> List[int]:
+        temp =[]
+        for i in nums:
+            temp.append(i**2)
+        temp.sort()
+        return temp        
+
+    
+    
+def sortedSquares(self, nums: List[int]) -> List[int]:
+        '''temp =[]
+        for i in nums:
+            temp.append(i**2)
+        temp.sort()
+        return temp'''
+        i = 0
+        j = len(nums)-1
+        temp = []
+        while(i<=j):
+            if nums[i]*nums[i] > nums[j]*nums[j]:
+                temp.append(nums[i]*nums[i])
+                i +=1
+            else:
+                temp.append(nums[j]*nums[j])
+                j-=1
+        return temp[::-1]
+    
+
+def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        #approach 1
+        for _ in range(k):
+            nums.insert(0, nums.pop())
+        #approach 2
+        k = k % len(nums)
+        nums[:] = nums[-k:] + nums[:-k]        
+        
+        
