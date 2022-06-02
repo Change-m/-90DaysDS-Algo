@@ -33,6 +33,11 @@ def searchInsert(self, nums: List[int], target: int) -> int:
         h = len(nums)-1
         l = 0
         if target in nums:
+
+            
+def reverseWords(self, s: str) -> str:
+        return " ".join(list(map(lambda x: x[::-1], s.split(' '))))
+
             
             
 def reverseWords(self, s: str) -> str:
