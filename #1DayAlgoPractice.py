@@ -116,6 +116,18 @@ def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
             slow = slow.next
             fast = fast.next.next
         return slow
+    
+def get_length(head):
+    if head is None:
+        return 0
+    else:
+        return 1 + get_length(head.next)
+class Solution:
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        half = int(get_length(head)/2) + 1
+        for i in range(1, half):
+            head = head.next
+        return head
     '''Example 1:
 Input: head = [1,2,3,4,5]
 Output: [3,4,5]
