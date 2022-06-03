@@ -1,0 +1,24 @@
+Infinite Sorted Array:- 
+                      Here we have the array with no length its infinite for us and we need to find an element in that array
+                      
+                      Example:- 
+                               a = [1, 3, 7, 8, 12, 58, 72, ...]
+             
+  Using Broute Force Approach:- Time Complexity:- O (n), Space Complexity:- O (1)
+                                We are using a constant range in this approach, we check the last element of the range
+                                if it is greater than element than the element is in that range Using Binary Search for 
+                                finding the element.
+                                
+Using Exponential range Approach:-  Time Complexity - O (log n), Space Complexity - O (1)
+                                  
+                                 def Infinite(a: List[int], key: int):
+                                      low = 0
+                                      high = 1
+                                      while (a[high] < key):
+                                           low = high
+                                           high = 2 * high
+                                      return binarySearch (a, key, low, high)
+                                      
+                                      
+                                 it's going exponentially that's why the complexity of while here is O (log n) and Bineary search is also O (log n)
+                                 and log n + log n for time Complexity is O (log n).
