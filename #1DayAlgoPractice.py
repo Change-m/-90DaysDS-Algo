@@ -132,3 +132,21 @@ class Solution:
 Input: head = [1,2,3,4,5]
 Output: [3,4,5]
 Explanation: The middle node of the list is node 3.'''
+
+    
+    
+def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        fast = head
+        slow = head
+        for i in range(n):
+            fast = fast.next
+        if fast == None:
+            return head.next
+        while(fast.next):
+            fast = fast.next
+            slow = slow.next
+        slow.next = slow.next.next
+        return head
+'''Example 1:
+Input: head = [1,2,3,4,5], n = 2
+Output: [1,2,3,5]'''
