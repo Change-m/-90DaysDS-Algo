@@ -150,3 +150,35 @@ def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNod
 '''Example 1:
 Input: head = [1,2,3,4,5], n = 2
 Output: [1,2,3,5]'''
+
+
+def lengthOfLongestSubstring(self, s: str) -> int:
+        final,l= 0,[]
+        for i in s:
+            if i in l:
+                final=max(final,len(l))
+                del l[0:l.index(i)+1]
+                l.append(i) 
+            else:
+                l.append(i)  
+                final=max(final,len(l))
+        return final 
+    
+def lengthOfLongestSubstring(self, s: str) -> int:
+        char_set = set()
+        left_p = 0
+        longest = 0
+
+        for right_p in range(len(s)):
+            while s[right_p] in char_set:
+                char_set.remove(s[left_p])
+                left_p += 1
+            char_set.add(s[right_p])
+            longest = max(longest, right_p - left_p + 1)
+
+        return longest
+    '''Example 1:
+
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.'''
