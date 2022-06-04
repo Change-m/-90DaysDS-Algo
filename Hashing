@@ -1,4 +1,128 @@
 Hashing:- hashing give the O (1) Time Complexity for Insert, Search and Delete.
 
    Unorder Set:-
-                Contain unique element 
+                Contain unique element and mutable
+                
+      Code:-    myset = set(["a", "b", "c"])
+                print(myset)
+                myset.add("d")
+                print(myset)
+         
+       OutPut-  {'c', 'b', 'a'}
+                {'d', 'c', 'b', 'a'}
+  ____________________________________________________________________________________________              
+
+  Frozen Sets:- it is a immutable objects
+                
+      Code:-    frozen_set = frozenset(["e", "f", "g"])
+  ____________________________________________________________________________________________  
+      
+Adding Element:- in set element can't be access by the index number.
+                 
+                  Code:-      people = {"Jay", "Idrish", "Archi"}
+                              for i in range(1, 6):
+                              people.add(i)
+                     
+    OutPut:-     {1, 2, 3, 4, 5, 'Idrish', 'Archi', 'Jay'}
+   ____________________________________________________________________________________________
+   
+    Union:-       Two set can be merge using union() function
+    
+                  Code:-    people = {"Jay", "Idrish", "Archil"}
+                            vampires = {"Karan", "Arjun"}
+                            dracula = {"Deepanshu", "Raju"}
+                            
+                            population = people.union(vampires)  ### Using union() function.
+                            
+                            population = people|dracula    ###Using '|' Operator
+    ______________________________________________________________________________________________
+    
+     Intersection:-      it select the common element from the two set example s1 and s2.
+                         Time Complexity of tthis is O(min(len(s1), len(s2)))
+                         
+                         
+                         Code:-     s1 = set()
+                                    s2 = set()
+                                    for i in range(5):
+                                        s1.add(i)
+                                    for i in range(3, 9):
+                                        s2.add(i)
+ Using intersection() function:-    s3 = s1.intersection(s2)
+                                   
+          Using '&' Operator:-      s3 = s1 & s2
+  _________________________________________________________________________________________________
+  
+     Difference:-       find difference between sets
+                        Time Complexity is O(len(s1))
+                        
+                        Code:-     s3 = s1.difference(s2)    ### Using difference() function
+                                   s3 = s1 - s2   ###  Using '-' Operator
+   _________________________________________________________________________________________________
+   
+     Clearing Set:-     s1.clear()
+   _________________________________________________________________________________________________
+   
+                                          Time complexity of Sets
+ 
+
+Operation	                            Average case	                       Worst Case	notes                                    Note
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+x in s	                                O(1)	                              O(n)	 
+Union s|t	                             O(len(s)+len(t))	 	 
+Intersection s&t	                       O(min(len(s), len(t))                O(len(s) * len(t))	                                  replace “min” with “max” if t is not a set
+Multiple intersection s1&s2&..&sn	 	                                       (n-1)*O(l) where l is max(len(s1),..,len(sn))	 
+Difference s-t	                          O(len(s))
+                            
+_______________________________________________________________________________________________________
+
+                                          Operators for Sets
+Sets and frozen sets support the following operators:
+ 
+
+Operators	                              Notes
+-----------------------------------------------------------------------
+key in s	            -----            containment check
+key not in s	      -----            non-containment check
+s1 == s2	            -----            s1 is equivalent to s2
+s1 != s2	            -----            s1 is not equivalent to s2
+s1 <= s2	            -----            s1 is subset of s2
+s1 < s2	            -----            s1 is proper subset of s2
+s1 >= s2	            -----            s1 is superset of s2
+s1 > s2	            -----            s1 is proper superset of s2
+s1 | s2	            -----            the union of s1 and s2
+s1 & s2	            -----            the intersection of s1 and s2
+s1 – s2	            -----            the set of elements in s1 but not s2
+s1 ˆ s2	            -----            the set of elements in precisely one of s1 or s2
+___________________________________________________________________________________________________________
+
+Question 
+           Count Distinct Element:-  number of unique element
+                                     
+           Broute Force:-   Time Complexity O(n^2), Space Complexity O(1)
+                       
+           Using Hashset:-  
+                          def CountDistinct(a: int):
+                              Set = set()
+                              for i in range(len(a)):
+                                  Set.add(i)
+                                  return set.size()
+                                  
+            Union of two arrays:- merge two array
+                                  
+                                 Broute Force:-  Time Complexity O(nlogn), Spacee Complexity O(1)
+                                 
+                                 Using union() function of set:-  Time Complexity O(n+n),  Space Complexity  O(n+n)
+                                                                  s3 = s1.union(s2)
+                                                                  s3 = s1|s2
+                                                                  
+            Intersection array:-  count same element from two array
+                                  s3 = s1.intersection(s2)
+                                  s3 = s1 & s2
+                                  return s3.size()
+                                  
+                                  
+             Find the subarray with the given sum:-  
+                                                   
+                                                                
+                                 
+
