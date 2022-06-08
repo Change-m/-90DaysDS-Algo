@@ -156,3 +156,61 @@ Search an element in a sorted & rotated Array:-
                                                                  else:
                                                                       high = mid - 1
                                                       return -1
+
+------------------------------------*************************** Stock Buy and Sell ***********************------------------------------------------------------
+
+
+Stock Buy and Sell:
+                    In this problem we know that when stock gonna rise and when it gonna down in 
+                    an array. We need buy first than sell the stock.
+                    Example:-
+                            a = [3, 5, 1, 7, 4, 9, 3]
+                    
+                    Broute Force Solution:-  Time Complexity - O (n^2),   Space Complexity - O (1).
+                                          Take the first element and check the differce of that element
+                                          for every element, than we found the largest from differce which
+                                          shows the profit in stock.
+                                          
+                    Using Space to Optimise:- Time Complexity - O (n),   Space Complexity - O (n).
+                                             a = [3, 1, 4, 8, 7, 2, 5]
+                                             aux = [8, 8, 8, 8, 7, 5, 5]  # We start from the last element of array a 
+                                             and compare the if the previouse array elemnt is greater or smaller if greater than 
+                                             add it to the aux array if smaller and fill the previous value in that index.
+                                             Than we find the largest profit.
+                                             
+                    Using costant Space to Optimise:- Time Complexity - O (n), Space Complexity - O(1).
+                                                    a = [3, 1, 4, 8, 7, 2, 5]
+                                                    we take two variables
+                                                                         minSoFar = a[0]   #take the min value to buy the stocks
+                                                                         maxProfit = 0  #taking the max value of differce of the elements 
+                                                                         
+                                                                         
+                                                    def maxProfit(a: int):
+                                                         maxProfit = 0
+                                                         minSoFar = a[0]
+                                                         for i in range(len(a)):
+                                                             maxSoFar = math.min(minSoFar, a[i])
+                                                             Profit = a[i] - minSoFar
+                                                             maxProfit = math.max(maxProfit, Profit)
+                                                         return maxProfit
+                                                         
+                                                         
+                                                         
+Multiple Buy and Sell Stocks:-  
+                             In this problem we are buying and selling multiple stocks, but if we buy 
+                             a stock first we need to sell the stock before buying another stock we can hold only
+                             one stock at a time.
+                             Example:-
+                                      a = [5, 2, 6, 1, 4, 7, 3, 6]
+                                      we take one variable
+                                                           Profit = 0 # store the profit from the stock.
+                                      we check the next element if the next element is greater than we store the profit in Profit variable 
+                                      if it is not greater than move to next element.
+                                      
+                                      
+                                      def maxProfit(a: int):
+                                          Profit = 0
+                                          for i in range(len(a)):
+                                              if a[i] > a[i-1]:
+                                                  Profit += a[i] - a[i-1]
+                                          return Profit
