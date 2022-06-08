@@ -30,4 +30,46 @@
                                      if count == n/2:
                                          return arr[ansIndex]
                                          
-             ----------------------------*************************
+             ----------------------------*************************Book Allocation***********************----------------------------------------------------------
+             
+             
+Allocate minimum pages:- 
+                       Minimise the maximum numbers of pages read by a students.
+                       constraint :- book distribute in continue way and every student need to read the book by their own.
+                                     not spliting book.
+                       
+                       Using Broute Force:- Time Complexity O (2^n)
+                                            We divide the list in two parts and consider all the possibility to divide books between k numbers
+                                            of students recursively.
+                       
+                       
+                       Using Binary Search:- Time Complexity O (nlogn), Space Complexity O (1)
+                                             Array is not sorted but we using binary search because we need to allocate book in continouse way.
+                                             
+                                             Example:-
+                                                      a = [10, 5, 20]
+                                                      
+                                                      def minPages(a: List[int], k: int):
+                                                           min = max(a)
+                                                           max = sum(a)
+                                                           res = 0
+                                                           while (min <= max):
+                                                                mid = (min + max)/2
+                                                                if (isFesible(n, x, mid):
+                                                                    res = mid
+                                                                    max = mid - 1
+                                                                 else:
+                                                                      min = mid + 1
+                                                           return res
+                                                           
+                                                      def isFeasible(a: List[int], k: int, res):
+                                                            student = 1, sum = 0
+                                                            for i in range(len(a)):
+                                                                if sum + a[i] > res:
+                                                                    student += 1
+                                                                    sum = a[i]
+                                                                else:
+                                                                     sum += a[i]
+                                                             return student <= k
+                                                             
+    -----------------------------------------------****************************
