@@ -72,4 +72,58 @@ Allocate minimum pages:-
                                                                      sum += a[i]
                                                              return student <= k
                                                              
-    -----------------------------------------------****************************
+    -----------------------------------------------**************************** RainWater Trapping Problem *************************-----------------------------------------------
+
+
+Rainwater Trapping Problem:- 
+                            a = [3, 1, 2, 4, 0, 1, 3, 2]
+                                  _
+                            _    |_|    _
+                           |_|  _|_|   |_|_
+                           |_|_|_|_|  _|_|_|
+                           |_|_|_|_| |_|_|_|
+                  left -->  3,3,3,4,4,4,4,4   #checking from the left the max height of the block
+                            4,4,4,4,3,3,3,2  <-- right    #checking from the right the max height of the block
+                            
+                            Formula:-  i = math.min(left[i], right[i]) - a[i]
+                            # we are taking the min height from left or right and subtracting than from the element from the array.
+                              which give the amount of water store above the block and we add all the water stored and it give total amount of water.
+                              
+      Using Space Approach:- Time Complexity:-  O (n),  Space Complexity:- O (n)
+      
+                            def rainWater(a: int):
+                                 n = len(a)
+                                 left = []
+                                 right = []
+                                 left[0] = a[0]
+                                 for i in range(n):
+                                     left[i] = math.max(left[i-1], a[i])
+                                     
+                                     right[n-1] = a[n-1]
+                                 for i in range(n-2, 0):
+                                     right[i] = math.max(right[i+], a[i]):
+                                     
+                                 ans = 0
+                                 for i in range(n):
+                                     ans += (math.min(left[i], right[i]) - a[i]
+                                 return ans
+                            
+                                    
+      Without Using Space Approach:- Time Complexity:-  O (n),  Space Complexity:- O (1)
+                                    
+                                    def trap(a: int):
+                                        (left, right) = (0, len(a) - 1)
+                                        water = 0
+                                        maxLeft = a[left]
+                                        maxRight = a[right]
+                                        
+                                        While left < right:
+                                             if a[left] <= a[right]:
+                                                 left = left + 1
+                                                 maxLeft = max(maxLeft, a[left])
+                                                 water += (maxLeft - a[left])
+                                             else:
+                                                  right = right - 1
+                                                  maxRight = max(maxRight, a[right])
+                                                  water += (maxRight - a[right])
+                                        return water 
