@@ -1,0 +1,33 @@
+# Majority Elemnts in an array:
+                               
+                               Boyer-Moore majority Algorithm: to find the majority element in array we count
+                               the frequency of every element but we are not sure about the ans, we check the ans 
+                               in the end of the code by running simple code.
+                               Example:- 
+                                         arr = [1, 1, 2, 3, 1]
+                                         start counting element   1 -->1 -->2 -->1 -->2
+                                                                  2 -->1 -->0
+                                                                  3 -->1 -->0
+                                         after find the elemnt left in count is 1 with frequency 2
+                                         Now, we will run a loop to check our ans is correct or not
+                                         loop find 1 --> 3, count 3 1 is our ans.
+                                         
+                                         
+                                def majorityElement( arr: int)
+                                     ansIndex = 0
+                                     count = 1
+                                     for i in range(len(arr)):
+                                         if arr[i] == arr[ansIndex]:
+                                              count += 1
+                                         else:
+                                              count -= 1
+                                         if count == 0:
+                                             ansIndex = i
+                                             count = 1
+                                     for i in range(len(arr):    #Check if the ansIndex is actually the ans
+                                         arr[i] == arr[ansIndex]
+                                         count += 1
+                                     if count == n/2:
+                                         return arr[ansIndex]
+                                         
+             ----------------------------*************************
