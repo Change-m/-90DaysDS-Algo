@@ -198,5 +198,8 @@ topological Sorting -Using BFS :-
                                                  q.add(neighbor)
                                              
                         
-                        
+-------------------------------------*************************** Minimum Spanning Tree -Prims Algorithm ***********************************---------------------------------------------------------
+
+Minimum Spanning Tree :- 
+                        weighted graph
                         
