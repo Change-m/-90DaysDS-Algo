@@ -177,3 +177,54 @@ ________________________________________________________________________________
                                                                             return (len(map))
                                  
 
+__________________________________________________________________________________________________________________________________________________________________________________
+
+
+HashMap internal Working:-
+                          Hash Function properties:-
+                          1. Map large values to smaller values (can be any value not only integer)
+                             Example - h(2 1 9 3 5 4) = 7
+                                       h("Elephant") = 3
+                                       h({name: " Anuj"}) = 2
+                          2. Should be O(1) or O(len) for String keys.
+                          3. Should uniformly distribute large keys into hash table slot.
+                          ----Example of Hash Functions
+                              1. For Large keys :- h(key) = key % m  (primitive type)
+                              2. For String keys :- Weighted Sum     (primitive type)
+                                   "Cat"
+                                   (s[0]*x^0 + s[1]*x^1 + s[2]*x^2) % m
+                              3. For objects          (non - primitive type)
+                                 Weighted sum of elements
+                                       
+
+Hash Table:- 
+            h(large_value) = large_value % m ( m = size of hash table )
+            
+            Collision :- 
+                        if their is same output for the different input than it called collision.
+                        
+                        if we do not know the keys, then we can use the following methods to avoid collisions:
+                        1. Chaining
+                        2. Open Addressing (Linear Probing, Quadratic Probing, Double Hashing)
+                        
+                        
+            Chaining :- While 
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
