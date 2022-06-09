@@ -105,9 +105,98 @@ Questions:
                                                                    return True
                                                            return False
                                                          
-                        
-                        
-                        
+----------------------------*********************** Detect Cycle in Undirected Graphs ********************************--------------------------------------------------
+
+Detect Cycle in Undirected Graph:- (DFS) O (V+E)
+                                  using recS[] (boolean array) and vis[]
+                                  
+                                  def isCyclic(V: int, arr: List[List[int]]):
+                                      vis: List[bool]
+                                      recS: List[bool]
+                                      for i in range(V):
+                                          if !vis[i]:
+                                             if dfs(i, arr, vis, recS) return True
+                                       return False
+                                       
+                                  def dfs(v: int, arr: List[List[int]], recS: List[bool], vis: List[bool]):
+                                      vis[v] = True
+                                      recS[v] = True
+                                      for neighbor: arr.get(v):
+                                          if !vis[neighbor]:
+                                             if dfs(neighbor, arr, vis, recS):
+                                                return True
+                                          else:
+                                               if recS[neighbor]:
+                                                  return True
+                                      recS[v] = False 
+                                      return False
+
+
+----------------------------------------**************** Topological Sorting -Using DFS **********************-----------------------------------------------
+
+Topological Sorting -Using DFS :- 
+                                 for linear representation of the graph ig we have u to v edage than take u first than v.
+                                 here we go for DFS in graph when we find the end of node than we start anding the node to stack while coming out of that dfs function than 
+                                 our topological sorting array is ready to pop() and insert() to an array.
+                                 
+                                 def topoSort(V: int, arr: List[List[int]]):
+                                     vis = List[bool]
+                                     stack = []
+                                     for i in range V:
+                                         if !vis[i]:
+                                            dfs(arr, i, stack, vis)
+                                            
+                                      ans = []
+                                      i = 0
+                                      while !stock.isEmpty():
+                                            ans[i+1] = stack.pop()
+                                      return ans
+                                            
+                                 def dfs(arr: List[List[int]], v: int, stack: List[int], vis: List[bool]):
+                                     vis[v] = True
+                                     for neighbor: arr.get(v):
+                                         if !vis[neighbor]:
+                                            dfs(arr, neighbor, stack, vis)
+                                            
+                                      stack.push(v)
+
+
+
+-----------------------------******************* Topological Sorting -Using BFS (Kahn's Algorithm) ****************************----------------------------------------------
+
+topological Sorting -Using BFS :-
+                                 InDegree - 0,  OutDegree - 0 In Acyclic graph
+                                 Indegree - 0 means all the edages are outward direction.
+                                 Outdegree - 0 means all the edages are inward direction.
+                                 
+                                 def topoSort(V: int, arr: List[List[int]]):
+                                     inDeg = []
+                                     for arr: List[int]:
+                                         for e: List[int]:
+                                             inDeg[e] += 1
+                                             
+                                      vis = List[bool]
+                                      ansList = []
+                                      bfs (arr, V, 0, vis, ansList, inDeg)
+                                      
+                                      ans = List[int]
+                                      i = 0
+                                      for e: ans:
+                                         ans[i+1] = e
+                                      return ans
+                                      
+                                 def bfs(arr: List[List[int]], V: int, v: int, vis: List[bool], ans: List[List[int]], inDeg: List[int]):
+                                     q = LinkedList[]
+                                     for i in range(V):
+                                        if inDeg[i] == 0:
+                                           q.add(i)
+                                     while !q.isEmpty()):
+                                          cur = q.pop()
+                                          ans.add(cur)
+                                          for neighbor: arr.get(cur):
+                                              if --inDeg[neighbor] == 0:
+                                                 q.add(neighbor)
+                                             
                         
                         
                         
