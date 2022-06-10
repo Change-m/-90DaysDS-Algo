@@ -101,3 +101,16 @@ priority Queue in Python :- module heapq
                            nsmallest(k, iterable, key = fun) :- This function is used to return the k smallest elements from the iterable specified and 
                                                                 satisfying the key if mentioned.
 
+
+Questions :- 
+            1. Print kth largest element in an Array :- 
+                                                       Example :- a = [20, 10, 60, 30, 50, 40]
+                                                       create minHeap
+                                                       
+            2. Connect N ropes with minimum Cost :- O (n log n)
+                                                   take small ropes and make big rope than connect to a small rope continue untill the end you get the answer.
+                                                       
+                                                       
+            3. Find Median of Running Stream of Integers :- 
+                                                           
+                                                       
