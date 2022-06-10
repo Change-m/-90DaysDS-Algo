@@ -1,0 +1,103 @@
+Heap :- 
+       A complete Binary Tree that satisfies a heaps property.
+       Complete Binary Tree (every node have two childera and last node should have left child first)
+       
+       Properties :- 
+                    1. Max Heap :-
+                                  Value of the children is always smaller.
+                                  
+                    2. Min Heap :- 
+                                  Value of the children is always greater.
+                                  
+                    3. Heap represent as array and the height of complete binary tree is log n.
+                    
+     
+     Representation of array in Heap :-
+                                       Node -> i
+                                       Parent(i) = (i/2)   #### False for root
+                                       left.child(i) = 2 * i
+                                       right.child(i) = 2 * i + 1
+                                    
+                 Insertion in Heap :-
+                                     in insertion in a binary tree is should be as left child, than make the tree as maxheap after comparisions of the nodes.
+                                     
+                                     def insert(A: List[int], n, value):
+                                         n = n + 1
+                                         A[n] = value
+                                         i = n
+                                         while i > 1:
+                                              parent = i/2
+                                              if a[parent] < a[i]:
+                                                  swap(A, parent, i)
+                                                  i = parent
+                                              else:
+                                                   return
+                                                   
+                                                   
+                 Deletion in Heap :- 
+                                    in deletion in a binary tree it should maintained as max or min heap.
+                                    if we want to delete root element.
+                                    
+                                    def delete(A: List[int], n):
+                                        A[1] = A[n]
+                                        n = n - 1
+                                        i = 1
+                                        while i < n:
+                                             left = A[2 * i]
+                                             right = A[2 * i + 1]
+                                             if larger = left > right:
+                                                2 * i
+                                             2 * i + 1
+                                             if A[i] < A[larger];
+                                                swap(A, i, larger)
+                                                i = larger
+                                             else:
+                                                  return
+                                                   
+                 Heap Sort :- O (n log n) 
+                             
+                             def heapSort(a: List[int], n: int):
+                                 for i in range(n, 1, -1):
+                                    swap(a, 1, i)
+                                    heapify(a, n, i)
+                             
+                 Heapify :- O (n)
+                           
+                           def heapify(a: List[int], n: int, i: int): #### i = node number which need to be heapify
+                               largest = i
+                               l = 2 * i
+                               r = 2 * i + 1
+                               if (l < n && a[l] > a[largest]):
+                                  largest = l
+                               if (r < n && a[r] > a[largest]):
+                                  largest = r
+                               if (largest != i):
+                                  swap(a, i, lengest)
+                                  heapify(a, n, largest)
+                                  
+                               def heap(a: int, n: int):
+                                   for i in range(n/2, 0, -1):
+                                       heapify(a, n, i)
+                                  
+--------------------------------------------------Priority Queue -----------------------------------------------------------
+
+
+priority Queue in Python :- module heapq
+                           heapify(iterable) :- This function is used to convert the iterable into a heap data structure. i.e. in heap order.
+                           heappush(heap, ele) :- This function is used to insert the element mentioned in its arguments into heap. The order 
+                                                  is adjusted, so as heap structure is maintained.
+                           heappop(heap) :- This function is used to remove and return the smallest element from heap. The order is adjusted, 
+                                            so as heap structure is maintained.
+
+                           heappushpop(heap, ele) :- This function combines the functioning of both push and pop operations in one statement, 
+                                                     increasing efficiency. Heap order is maintained after this operation.
+                           heapreplace(heap, ele) :- This function also inserts and pops element in one statement, but it is different from above 
+                                                     function. In this, element is first popped, then the element is pushed.i.e, the value larger 
+                                                     than the pushed value can be returned. heapreplace() returns the smallest value originally in 
+                                                     heap regardless of the pushed element as opposed to heappushpop().
+
+                           nlargest(k, iterable, key = fun) :- This function is used to return the k largest elements from the iterable specified and 
+                                                               satisfying the key if mentioned.
+                           nsmallest(k, iterable, key = fun) :- This function is used to return the k smallest elements from the iterable specified and 
+                                                                satisfying the key if mentioned.
+
