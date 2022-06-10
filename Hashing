@@ -10,12 +10,14 @@ Hashing:- hashing give the O (1) Time Complexity for Insert, Search and Delete.
          
        OutPut-  {'c', 'b', 'a'}
                 {'d', 'c', 'b', 'a'}
-  ____________________________________________________________________________________________              
+ 
+ ____________________________________________________________________________________________              
 
   Frozen Sets:- it is a immutable objects
                 
       Code:-    frozen_set = frozenset(["e", "f", "g"])
-  ____________________________________________________________________________________________  
+
+____________________________________________________________________________________________  
       
 Adding Element:- in set element can't be access by the index number.
                  
@@ -24,7 +26,9 @@ Adding Element:- in set element can't be access by the index number.
                               people.add(i)
                      
     OutPut:-     {1, 2, 3, 4, 5, 'Idrish', 'Archi', 'Jay'}
-   ____________________________________________________________________________________________
+
+
+____________________________________________________________________________________________
    
     Union:-       Two set can be merge using union() function
     
@@ -35,7 +39,9 @@ Adding Element:- in set element can't be access by the index number.
                             population = people.union(vampires)  ### Using union() function.
                             
                             population = people|dracula    ###Using '|' Operator
-    ______________________________________________________________________________________________
+
+
+______________________________________________________________________________________________
     
      Intersection:-      it select the common element from the two set example s1 and s2.
                          Time Complexity of tthis is O(min(len(s1), len(s2)))
@@ -50,17 +56,22 @@ Adding Element:- in set element can't be access by the index number.
  Using intersection() function:-    s3 = s1.intersection(s2)
                                    
           Using '&' Operator:-      s3 = s1 & s2
-  _________________________________________________________________________________________________
+
+
+_________________________________________________________________________________________________
   
      Difference:-       find difference between sets
                         Time Complexity is O(len(s1))
                         
                         Code:-     s3 = s1.difference(s2)    ### Using difference() function
                                    s3 = s1 - s2   ###  Using '-' Operator
-   _________________________________________________________________________________________________
+ 
+
+_________________________________________________________________________________________________
    
      Clearing Set:-     s1.clear()
-   _________________________________________________________________________________________________
+
+_________________________________________________________________________________________________
    
                                           Time complexity of Sets
  
@@ -73,6 +84,7 @@ Intersection s&t	                       O(min(len(s), len(t))                O(l
 Multiple intersection s1&s2&..&sn	 	                                       (n-1)*O(l) where l is max(len(s1),..,len(sn))	 
 Difference s-t	                          O(len(s))
                             
+
 _______________________________________________________________________________________________________
 
                                           Operators for Sets
@@ -93,6 +105,8 @@ s1 | s2	            -----            the union of s1 and s2
 s1 & s2	            -----            the intersection of s1 and s2
 s1 – s2	            -----            the set of elements in s1 but not s2
 s1 ˆ s2	            -----            the set of elements in precisely one of s1 or s2
+
+
 ___________________________________________________________________________________________________________
 
 Question 
@@ -119,7 +133,8 @@ Question
                                   s3 = s1.intersection(s2)
                                   s3 = s1 & s2
                                   return s3.size()
-  ______________________________________________________________________________________________________________                                
+
+______________________________________________________________________________________________________________                                
                                   
              Find the subarray with the given sum:-  
                                                    Example:-  a = [10, 15, -5, 15, -10, 5]
@@ -152,6 +167,8 @@ Question
                                                             print("Not Found")
                                                          else:
                                                               print(start +","+ end)
+
+
 ______________________________________________________________________________________________________________________________________________________________________________
 
              Count the distinct elements in every window of size k:-
@@ -201,15 +218,22 @@ Hash Table:-
             h(large_value) = large_value % m ( m = size of hash table )
             
             Collision :- 
-                        if their is same output for the different input than it called collision.
+                        While Hashing, the hashing function may lead to a collision that is two or more keys are mapped to the same value.
                         
                         if we do not know the keys, then we can use the following methods to avoid collisions:
                         1. Chaining
                         2. Open Addressing (Linear Probing, Quadratic Probing, Double Hashing)
                         
                         
-            Chaining :- While 
-                        
+            Chaining :- 
+                       Chain hashing avoids collision. The idea is to make each cell of hash table point to a linked list pf records 
+                       that have same hash function value. 
+                       
+            
+            Open addressing :- 
+                              In Linear Probing, whenever a collision occurs, we probe to the next empty slot. While in 
+                              quadratic Probing, whenever a collision occurs, we probe for i^2th slot in the ith iteration and we keep 
+                              probing until an empty slot in the hashtable is found.
 
 
 
