@@ -56,3 +56,71 @@ Linked List:-
                                                return newHead
                                               
                                               
+2. Palindrome Linked List & Find the middle :- 
+                                              Divide the Linked List into two parts and reverse the half part of the Linked List and compare for the Palindrome.
+                                              Find the mid od the Linked List using the fast and slow pointer than reverse the half and compare.
+                                              
+                                              def Palindrome(head : Node):
+                                                  if head == None:
+                                                     return True
+                                                  mid = middle(head)
+                                                  last = reverse(mid.next)
+                                                  cur = head
+                                                  while last != None:
+                                                       if last.data != cur.data:
+                                                          return False
+                                                       last = last.next
+                                                       cur = cur.next
+                                                  return True
+                                              
+                                              def middle(head):
+                                                  slow = head
+                                                  fast = head
+                                                  while fast != None and fast.next != None:
+                                                        slow = slow.next
+                                                        fast = fast.next.next
+                                                  return slow
+                         
+                         
+3.   Detect cycle in a Linked List (Floyd's Cycle detection Algorithm :-
+                                                                        
+                                              
+4. Duplicate a Linked List with random pointer :- 
+                                                  def duplicate(head: Node):
+                                                      cur = head
+                                                      while cur != None:
+                                                            temp = cur.next
+                                                            cur.next = cur.data
+                                                            cur.next.next = temp
+                                                            cur = temp
+                                                      cur = head
+                                                      while cur != None:
+                                                           if cur.next != None:
+                                                              if cur.random != None:
+                                                                 cur.next.random = cur.random.next
+                                                              cur.random.next = None
+                                                           cur = cur.next.next
+                                                           
+                                                      orig = head  ### seperate both the Linked List
+                                                      copy = head.next
+                                                      temp = copy
+                                                      while orig != None:
+                                                            orig.next = orig.next.next
+                                                            copy.next = copy.next.next
+                                                            orig = orig.next
+                                                            copy = copy.next
+                                                      return temp
+                                                              
+                                                              
+                                              
+                                              
+                                              
+                                              
+                                              
+                                              
+                                              
+                                              
+                                              
+                                              
+                                              
+                                              
