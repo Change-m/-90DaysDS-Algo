@@ -1,0 +1,115 @@
+Stack :- LIFO
+         empty() - Return whether the stack is empty O (1).
+         size() - Returns the size of the stack O (1).
+         top() - Returns a reference to the topmost element of the stack O (1).
+         push(a) - Inserts the element 'a' at the top of the stack O (1).
+         pop() - Deletes the topmost element of the stack O (1).
+         
+         
+         Using Array :- 
+                       Class Mystack:
+                             a = []
+                             top = int
+                             capacity = int
+                             def Myastack(capacity: int):
+                                 a = [capacity]
+                                 top = -1
+                                 
+                             def push(data: int):
+                                 if top == Capacity - 1:
+                                    threw new Excrption()
+                                 top += 1
+                                 a [top] = data
+                                 
+                             def pop ():
+                                 if top == -1:
+                                    threw new Exception()
+                                 res = a[top]
+                                 top -= 1
+                                 return res
+                             def peek():
+                                 if top == -1:
+                                    threw new Eception()
+                                 return res[top]
+                             def isEmpty():
+                                 returm top == -1
+                                 
+                                 
+         Using Linked List :-
+                              
+                              
+                              
+                              
+                              
+                              
+------------------------------------------------ Questions -------------------------------------------------------------------------
+
+1. Previous smaller Element :- O (n) 
+                              if previous element is smaller than the current element store ot in stack if the 
+                              stack element is bigger than the current element pop() it from the stack and store the current element.
+                              
+                              def PreviousSmallerElement(a: List[int]):
+                                  s = []
+                                  for i in range(len(a)):
+                                     while !s.empty() and s.peek() >= a[i]:
+                                           s.pop()
+                                     if s.empty():
+                                        return -1
+                                     else:
+                                          return(s.peek)
+                                     s.push(a[i])
+                                     
+2. Next smaller Element :- 
+
+
+
+3. Parenthesis Matching Problem or Bracket Balancing Problem :- 
+                                                               def isParenthesisisMatching(s: str):
+                                                                   stack = []
+                                                                   for i in rnage(len(s)):
+                                                                       cur = s[i]
+                                                                       if isOpening(cur):
+                                                                          s.push(cur)
+                                                                       else:
+                                                                            if s.empty():
+                                                                               return False
+                                                                            else: 
+                                                                                 if !isMatching(s.peek(), cur)
+                                                                                    return False
+                                                                                 else:
+                                                                                      s.pop()
+                                                                    return s.empty()
+                                                                
+                                                               def isOpening(c: str):
+                                                                   return c = '(' or
+                                                                          c = '{' or
+                                                                          c = '['
+                                                                          
+                                                               def isMatching(a: str, b: str):
+                                                                   return (a = '(' and b = ')') or
+                                                                          (a = '{' and b = '}') or
+                                                                          (a = '[' and b = ']')
+                                                                   
+                                                                                 
+
+4. Max area in a Histogram :- 
+                             Find previous small element 
+                             Next small element 
+                             area = (next[i] - prev[i]-1) * a[i]
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
