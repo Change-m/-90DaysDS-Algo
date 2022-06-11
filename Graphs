@@ -203,3 +203,20 @@ topological Sorting -Using BFS :-
 Minimum Spanning Tree :- 
                         weighted graph
                         
+-----------------------------------************************* Max Area of Island ***********************------------------------------------------------------------------
+
+class Solution:
+    def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
+        seen = set(); # mark visited nodes
+        def dfs(r,c):
+            if not (0 <= r < len(grid) and 0 <= c < len(grid[0]) and (r, c) not in seen and grid[r][c]): return 0
+            seen.add((r,c)); # add visited nodes
+            return  (1 + dfs(r+1,c)+ dfs(r-1,c) + dfs(r,c-1)+ dfs(r, c+1)) # explore adjacenct nodes
+        return max(dfs(r, c) for r in range(len(grid)) for c in range(len(grid[0]))) #visit every node and perform dfs
+        
+        ###########Example 1:
+
+
+                    Input: grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]
+                    Output: 6
+                    Explanation: The answer is not 11, because the island must be connected 4-directionally.
