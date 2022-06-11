@@ -111,6 +111,10 @@ Questions :-
                                                    take small ropes and make big rope than connect to a small rope continue untill the end you get the answer.
                                                        
                                                        
-            3. Find Median of Running Stream of Integers :- 
+            3. Find Median of Running Stream of Integers :- Brote force O ( n^2)
+                                                           Average of the sum
+                                                           O (n log n)
+                                                           divide the array in two equal list left (maxHeap) will have smaller number than x (median) and right (minHeap)  will have greatest number from the x.
+                                                           if even than take average of largest element from left and the smallest element from right. if array is odd than consider more nuumber in left array 
+                                                           and less in right, the largest element from the left is gonna be median.
                                                            
-                                                       
