@@ -1,1 +1,58 @@
-Linked List:-   
+Linked List:- 
+             Code for Traverse in LinkedList :- 
+                                               def traverse(head):
+                                                   cur = head
+                                                   while cur != null:
+                                                   return cur.data
+                                                   cur = cur.next
+             
+             Code for insertion in LinkedList:-
+                                               def insert(data: int, head, pos: int):
+                                                   Add = data
+                                                   if pos == 0:
+                                                      Add.next = head
+                                                      return head = Add
+                                                   
+                                                   prev = head
+                                                   for i in range(0, pos-1):
+                                                       prev = prev.next
+                                                   Add.next = prev.next
+                                                   prev.next = Add
+             
+             Code for insertion in LinkedList:-
+                                               def delete(head: Node, pos: int):
+                                                   if pos == 0:
+                                                      head = head.next
+                                                      return 
+                                                   
+                                                   prev = head
+                                                   for i in range(0, pos-1):
+                                                       prev = prev.next
+                                                   prev.next = prev.next.next
+
+
+----------------------------------------------------------------- Questions ---------------------------------------------------------------------------
+
+1. Reverse a Linked List :-
+                           Iterative way :-
+                                           def reverse(head: Node):
+                                              cur = head
+                                              prev = None
+                                              while cur != None:
+                                                    temp = cur.next
+                                                    cur.next = prev
+                                                    prev = cur
+                                                    cur = temp
+                                              return prev
+                                              
+                           Recursion way :- 
+                                           def reverse(head: Node):
+                                               if head == null or head.next == None:
+                                                  return head
+                                               newHead = reverse(head.next)
+                                               headNext = head.next
+                                               headNext = head
+                                               headNext.next = None
+                                               return newHead
+                                              
+                                              
